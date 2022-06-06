@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+// import Paragraph from "./components/Paragraph";
+import User from "./components/User";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <Paragraph text="Merhaba" /> */}
+
+      <User
+        // title="User"
+        name={"Ahmet"}
+        age={30}
+        isAdmin={true}
+        location={{ country: "Türkiye", city: "Ankara" }}
+        friends={["Mehmet", "Ayşe", "Kerim", "Hande"]}
+        handleClick={() => alert("Click event")}
+      />
+
+      <User
+        title="User"
+        name={"Mete"}
+        age={20}
+        isAdmin={false}
+        location={{ country: "Türkiye", city: "Istanbul", zipCode: 34755 }}
+        friends={["Fırat", "Kenan", "Mine", "Yasemin"]}
+        handleClick={() => alert("Click event")}
+      />
     </div>
   );
 }
