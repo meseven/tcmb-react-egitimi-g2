@@ -4,7 +4,11 @@ function User() {
   const [user, setUser] = useState({ id: 1, name: "Fatih", city: "Istanbul" });
 
   const handleClick = () => {
-    setUser({ ...user, id: 2, name: "Murat" });
+    setUser((prev) => ({
+      ...prev,
+      id: 2,
+      name: "Murat",
+    }));
   };
 
   return (
