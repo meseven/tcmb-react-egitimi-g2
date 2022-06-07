@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ViewData from "./ViewData";
 
 // batch update
 
@@ -15,6 +16,9 @@ function Counter() {
 
   return (
     <>
+      <ViewData count={count} increase={increase} />
+      <hr />
+
       <h1>{count}</h1>
       <button onClick={increase}>Click</button>
       <hr />

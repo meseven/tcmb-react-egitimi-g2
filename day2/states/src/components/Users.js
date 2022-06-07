@@ -17,7 +17,7 @@ function Users() {
 
   const handleAdd = () => {
     const randomName = names[Math.floor(Math.random() * names.length)];
-    setUsers((prev) => [...prev, { id: uuidv4(), name: randomName }]);
+    setUsers((prev) => [...users, { id: uuidv4(), name: randomName }]);
   };
 
   const handleRemove = (id) => {
