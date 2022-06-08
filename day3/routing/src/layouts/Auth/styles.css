@@ -1,0 +1,25 @@
+.auth-layout-container {
+  background: #f1f1f1;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.auth-layout-container > div {
+  padding: 25px;
+  border: 2px solid #ddd;
+  background-color: #eee;
+  min-height: 220px;
+  min-width: 220px;
+}
+
+.auth-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-menu a {
+  margin-right: 10px;
+}

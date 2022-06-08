@@ -1,0 +1,11 @@
+label {
+  display: block;
+}
+
+input {
+  width: 100%;
+}
+
+.login > div {
+  margin-bottom: 15px;
+}
