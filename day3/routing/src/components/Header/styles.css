@@ -1,0 +1,17 @@
+.menu {
+  display: flex;
+}
+
+.menu li {
+  margin: 5px 0;
+}
+
+.menu li a {
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+.menu li a:hover {
+  text-decoration: underline;
+}
