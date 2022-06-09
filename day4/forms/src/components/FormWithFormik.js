@@ -18,8 +18,12 @@ function FormWithFormik() {
       message: "",
     },
     onSubmit: async (values, bag) => {
-      await new Promise((r) => setTimeout(r, 1000));
-      console.log(values);
+      await new Promise((r) => setTimeout(r, 1000)); // backend call
+
+      if (values.email === "test@test.com") {
+        return bag.setErrors({ email: "Bu email adresi zaten kullanımda." });
+      }
+
       bag.resetForm();
     },
     validationSchema,
