@@ -44,3 +44,12 @@ code {
 .error {
   color: red;
 }
+
+.suggestion {
+  display: block;
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  text-decoration: underline;
+}

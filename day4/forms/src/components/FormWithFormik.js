@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import validationSchema from "./validations";
 
+const usernames = [
+  "sedademir",
+  "kadircanugur",
+  "harunozcalik",
+  "zeynepyildirim",
+  "ardaguzererler",
+];
+
 function FormWithFormik() {
+  const [username, setUsername] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+
   const {
     handleSubmit,
     values,
@@ -29,9 +40,47 @@ function FormWithFormik() {
     validationSchema,
   });
 
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  useEffect(() => {
+    const isValid = !usernames.includes(username);
+
+    if (!isValid) {
+      setSuggestions(generateRandomUsernames());
+    }
+
+    function generateRandomUsernames() {
+      let numbers = [];
+      for (let i = 0; i < 3; i++) {
+        numbers.push(username + "." + Math.floor(Math.random() * 1000));
+      }
+
+      return numbers;
+    }
+  }, [username]);
+
   return (
     <div className="contact-form">
       <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="username">Username</label>
+          <input value={username} onChange={handleUsernameChange} />
+        </div>
+
+        <div>
+          {suggestions.map((item, i) => (
+            <span
+              className="suggestion"
+              key={i}
+              onClick={() => setUsername(item)}
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+
         <div>
           <label htmlFor="name">Name</label>
           <input
