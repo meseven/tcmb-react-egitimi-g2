@@ -12,7 +12,11 @@ function Form() {
 
     setContacts((prev) => [
       ...prev,
-      { id: prev[prev.length - 1].id + 1, name, phoneNumber },
+      {
+        id: prev[prev.length - 1] ? prev[prev.length - 1].id + 1 : 1,
+        name,
+        phoneNumber,
+      },
     ]);
     setName("");
     setPhoneNumber("");
